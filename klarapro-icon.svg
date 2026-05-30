@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
   <defs>
-    <radialGradient id="amberGlow" cx="42%" cy="50%" r="48%">
+    <radialGradient id="amberGlow" cx="38%" cy="50%" r="48%">
       <stop offset="0%" stop-color="#F5B000" stop-opacity="0.14"/>
       <stop offset="100%" stop-color="#F5B000" stop-opacity="0"/>
     </radialGradient>
@@ -21,11 +21,12 @@
   <!-- Subtle border -->
   <rect x="1" y="1" width="398" height="398" rx="79" fill="none" stroke="#222222" stroke-width="2"/>
 
-  <!-- K lettermark — all amber, arms merge into bar -->
+  <!-- K lettermark — geometrically centered in 400x400 -->
+  <!-- Visual K spans x≈64→336 (272px), y≈55→345 (290px), centered at 200,200 -->
   <!-- Vertical bar -->
-  <rect x="68" y="68" width="54" height="264" rx="7" fill="#F5B000"/>
-  <!-- Upper arm (starts inside bar for seamless merge) -->
-  <line x1="95" y1="200" x2="318" y2="68" stroke="#F5B000" stroke-width="52" stroke-linecap="round"/>
+  <rect x="64" y="68" width="54" height="264" rx="7" fill="#F5B000"/>
+  <!-- Upper arm (starts at bar center for seamless merge) -->
+  <line x1="91" y1="200" x2="314" y2="68" stroke="#F5B000" stroke-width="52" stroke-linecap="round"/>
   <!-- Lower arm -->
-  <line x1="95" y1="200" x2="318" y2="332" stroke="#F5B000" stroke-width="52" stroke-linecap="round"/>
+  <line x1="91" y1="200" x2="314" y2="332" stroke="#F5B000" stroke-width="52" stroke-linecap="round"/>
 </svg>
