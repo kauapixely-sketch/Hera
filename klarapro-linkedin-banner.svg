@@ -56,27 +56,22 @@
   <text x="899" y="143" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
     font-size="16" font-weight="800" fill="#0A0A0A" text-anchor="middle" letter-spacing="1.5">PRO</text>
 
-  <!-- Tagline under wordmark -->
-  <text x="298" y="304" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
-    font-size="19" font-weight="400" fill="#444444" letter-spacing="5">IA PARA LICITAÇÕES PÚBLICAS</text>
+  <!-- Slogan 2 — solução (sob o wordmark) -->
+  <text x="298" y="300" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="26" font-weight="700" fill="#F5B000" letter-spacing="-0.5">Não leia editais. Ganhe licitações.</text>
 
   <!-- Vertical divider -->
   <line x1="966" y1="56" x2="966" y2="340" stroke="#1C1C1C" stroke-width="1.5"/>
 
   <!-- === RIGHT COLUMN === -->
 
-  <!-- Eyebrow -->
-  <rect x="998" y="72" rx="4" width="8" height="8" fill="#F5B000"/>
-  <text x="1016" y="81" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
-    font-size="13" font-weight="700" fill="#F5B000" letter-spacing="3.5">POR QUÊ USAR</text>
-
-  <!-- Headline lines -->
-  <text x="996" y="148" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
-    font-size="40" font-weight="800" fill="#FFFFFF" letter-spacing="-1">Analistas custam R$ 8.000/mês.</text>
-  <text x="996" y="198" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
-    font-size="40" font-weight="800" fill="#FFFFFF" letter-spacing="-1">A Klara entrega o mesmo</text>
-  <text x="996" y="248" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
-    font-size="40" font-weight="800" fill="#F5B000" letter-spacing="-1">em 30 segundos.</text>
+  <!-- Slogan 1 — dor (headline direita) -->
+  <text x="996" y="136" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="38" font-weight="800" fill="#FFFFFF" letter-spacing="-1">A cláusula que você</text>
+  <text x="996" y="184" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="38" font-weight="800" fill="#FFFFFF" letter-spacing="-1">não leu custou</text>
+  <text x="996" y="232" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="38" font-weight="800" fill="#F5B000" letter-spacing="-1">o contrato.</text>
 
   <!-- Stats -->
   <text x="998" y="302" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
