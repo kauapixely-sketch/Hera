@@ -1,92 +1,110 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 396" width="1584" height="396">
   <defs>
-    <!-- Grid pattern -->
     <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
-      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#141414" stroke-width="1"/>
+      <path d="M44 0L0 0 0 44" fill="none" stroke="#111111" stroke-width="1"/>
     </pattern>
-    <!-- Amber left glow -->
-    <radialGradient id="leftGlow" cx="20%" cy="55%" r="38%">
-      <stop offset="0%" stop-color="#F5B000" stop-opacity="0.10"/>
+    <radialGradient id="glowL" cx="18%" cy="52%" r="35%">
+      <stop offset="0%" stop-color="#F5B000" stop-opacity="0.11"/>
       <stop offset="100%" stop-color="#F5B000" stop-opacity="0"/>
     </radialGradient>
-    <!-- Right subtle glow -->
-    <radialGradient id="rightGlow" cx="85%" cy="50%" r="30%">
+    <radialGradient id="glowR" cx="82%" cy="50%" r="28%">
       <stop offset="0%" stop-color="#F5B000" stop-opacity="0.04"/>
       <stop offset="100%" stop-color="#F5B000" stop-opacity="0"/>
     </radialGradient>
+    <linearGradient id="fadeLeft" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0A0A0A" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0A0A0A" stop-opacity="1"/>
+    </linearGradient>
   </defs>
 
-  <!-- Base -->
+  <!-- Base + texture -->
   <rect width="1584" height="396" fill="#0A0A0A"/>
-  <!-- Grid texture -->
   <rect width="1584" height="396" fill="url(#grid)"/>
-  <!-- Glow overlays -->
-  <rect width="1584" height="396" fill="url(#leftGlow)"/>
-  <rect width="1584" height="396" fill="url(#rightGlow)"/>
+  <rect width="1584" height="396" fill="url(#glowL)"/>
+  <rect width="1584" height="396" fill="url(#glowR)"/>
 
-  <!-- === LEFT SECTION: Logo === -->
-
-  <!-- K icon (large, decorative behind) -->
-  <g opacity="0.04">
-    <rect x="-30" y="40" width="120" height="316" fill="#F5B000"/>
-    <line x1="90" y1="198" x2="380" y2="40" stroke="#F5B000" stroke-width="118" stroke-linecap="round"/>
-    <line x1="90" y1="198" x2="380" y2="356" stroke="#F5B000" stroke-width="118" stroke-linecap="round"/>
+  <!--
+    K icon: scale=2.2 → K height=296*2.2=651px → that's too big for a 396px banner.
+    Better: scale=0.9 → K height=266px, positioned at y=(396-266)/2=65
+    translate(58, 65) scale(0.9)
+    Same arm polygons in K-space (origin at bar top-left):
+  -->
+  <!-- Decorative large K (ghost, very subtle) -->
+  <g transform="translate(-40, -20) scale(1.5)" opacity="0.035">
+    <polygon points="35,127.8 232.9,1.7 259,38.4 61,168.2" fill="#F5B000"/>
+    <polygon points="61,127.8 259,257.6 232.9,294.3 35,168.2" fill="#F5B000"/>
+    <rect x="0" y="0" width="48" height="296" rx="5" fill="#F5B000"/>
   </g>
 
-  <!-- K icon (real, visible) -->
-  <rect x="60" y="94" width="30" height="208" rx="4" fill="#F5B000"/>
-  <line x1="90" y1="198" x2="210" y2="94" stroke="#F5B000" stroke-width="30" stroke-linecap="round"/>
-  <line x1="90" y1="198" x2="210" y2="302" stroke="#F5B000" stroke-width="30" stroke-linecap="round"/>
+  <!-- Real K icon (scale=0.9 → 266px tall) -->
+  <g transform="translate(60, 65) scale(0.9)">
+    <polygon points="35,127.8 232.9,1.7 259,38.4 61,168.2" fill="#F5B000"/>
+    <polygon points="61,127.8 259,257.6 232.9,294.3 35,168.2" fill="#F5B000"/>
+    <rect x="0" y="0" width="48" height="296" rx="5" fill="#F5B000"/>
+  </g>
+
+  <!-- Fade edge after K -->
+  <rect x="200" y="0" width="80" height="396" fill="url(#fadeLeft)"/>
 
   <!-- "Klara" wordmark -->
-  <text x="236" y="246" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="148" font-weight="800" fill="#FFFFFF" letter-spacing="-5">Klara</text>
+  <text font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="900" letter-spacing="-4">
+    <tspan x="296" y="262" font-size="164" fill="#FFFFFF">Klara</tspan>
+  </text>
 
-  <!-- "pro" badge -->
-  <rect x="824" y="120" width="80" height="36" rx="18" fill="#F5B000"/>
-  <text x="864" y="144" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="17" font-weight="800" fill="#0A0A0A" text-anchor="middle" letter-spacing="1">PRO</text>
+  <!-- "pro" badge pill -->
+  <rect x="858" y="118" width="82" height="38" rx="19" fill="#F5B000"/>
+  <text x="899" y="143" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="16" font-weight="800" fill="#0A0A0A" text-anchor="middle" letter-spacing="1.5">PRO</text>
 
   <!-- Tagline under wordmark -->
-  <text x="238" y="292" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="20" font-weight="400" fill="#555555" letter-spacing="5">IA PARA LICITAÇÕES PÚBLICAS</text>
+  <text x="298" y="304" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="19" font-weight="400" fill="#444444" letter-spacing="5">IA PARA LICITAÇÕES PÚBLICAS</text>
 
   <!-- Vertical divider -->
-  <line x1="940" y1="60" x2="940" y2="336" stroke="#1E1E1E" stroke-width="1.5"/>
+  <line x1="966" y1="56" x2="966" y2="340" stroke="#1C1C1C" stroke-width="1.5"/>
 
-  <!-- === RIGHT SECTION: Value prop + stats === -->
+  <!-- === RIGHT COLUMN === -->
 
-  <!-- Eyebrow label -->
-  <rect x="972" y="72" width="10" height="10" rx="5" fill="#F5B000"/>
-  <text x="992" y="82" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#F5B000" letter-spacing="3">POR QUE USAR</text>
+  <!-- Eyebrow -->
+  <rect x="998" y="72" rx="4" width="8" height="8" fill="#F5B000"/>
+  <text x="1016" y="81" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="13" font-weight="700" fill="#F5B000" letter-spacing="3.5">POR QUÊ USAR</text>
 
-  <!-- Main headline -->
-  <text x="970" y="152" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="42" font-weight="800" fill="#FFFFFF" letter-spacing="-1">Analistas custam R$ 8.000/mês.</text>
-  <text x="970" y="204" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="42" font-weight="800" fill="#FFFFFF" letter-spacing="-1">A Klara entrega o mesmo</text>
-  <!-- "em 30 segundos." in amber -->
-  <text x="970" y="256" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="42" font-weight="800" fill="#F5B000" letter-spacing="-1">em 30 segundos.</text>
+  <!-- Headline lines -->
+  <text x="996" y="148" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="40" font-weight="800" fill="#FFFFFF" letter-spacing="-1">Analistas custam R$ 8.000/mês.</text>
+  <text x="996" y="198" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="40" font-weight="800" fill="#FFFFFF" letter-spacing="-1">A Klara entrega o mesmo</text>
+  <text x="996" y="248" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="40" font-weight="800" fill="#F5B000" letter-spacing="-1">em 30 segundos.</text>
 
-  <!-- Stats row -->
-  <!-- Stat 1 -->
-  <text x="972" y="318" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" font-weight="800" fill="#FFFFFF">4h → 30min</text>
-  <text x="972" y="340" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#555555" letter-spacing="1.5">POR EDITAL</text>
+  <!-- Stats -->
+  <text x="998" y="302" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="21" font-weight="800" fill="#FFFFFF">4h → 30min</text>
+  <text x="998" y="324" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="11" font-weight="500" fill="#3D3D3D" letter-spacing="2">POR EDITAL</text>
 
-  <!-- Separator -->
-  <line x1="1118" y1="302" x2="1118" y2="346" stroke="#2A2A2A" stroke-width="1"/>
+  <line x1="1146" y1="287" x2="1146" y2="332" stroke="#222222" stroke-width="1"/>
 
-  <!-- Stat 2 -->
-  <text x="1132" y="318" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" font-weight="800" fill="#FFFFFF">Score 0-100</text>
-  <text x="1132" y="340" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#555555" letter-spacing="1.5">ADERÊNCIA</text>
+  <text x="1160" y="302" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="21" font-weight="800" fill="#FFFFFF">Score 0–100</text>
+  <text x="1160" y="324" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="11" font-weight="500" fill="#3D3D3D" letter-spacing="2">ADERÊNCIA</text>
 
-  <!-- Separator -->
-  <line x1="1292" y1="302" x2="1292" y2="346" stroke="#2A2A2A" stroke-width="1"/>
+  <line x1="1316" y1="287" x2="1316" y2="332" stroke="#222222" stroke-width="1"/>
 
-  <!-- Stat 3 -->
-  <text x="1306" y="318" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" font-weight="800" fill="#FFFFFF">20+ segmentos</text>
-  <text x="1306" y="340" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#555555" letter-spacing="1.5">COBERTOS</text>
+  <text x="1330" y="302" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="21" font-weight="800" fill="#FFFFFF">20+ segmentos</text>
+  <text x="1330" y="324" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="11" font-weight="500" fill="#3D3D3D" letter-spacing="2">COBERTOS</text>
+
+  <!-- Top announcement bar -->
+  <rect x="0" y="0" width="1584" height="30" fill="#0D0D0D"/>
+  <rect x="0" y="29" width="1584" height="1" fill="#1A1A1A"/>
+  <circle cx="534" cy="15" r="3" fill="#F5B000"/>
+  <text x="548" y="20" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="12" fill="#555555" letter-spacing="0.3">Análise completa em menos de 60 segundos  ·  14 dias grátis  ·  sem cobrança antes do 15º dia</text>
 
   <!-- Bottom amber bar -->
-  <rect x="0" y="382" width="1584" height="14" fill="#F5B000" opacity="0.9"/>
-
-  <!-- Top announcement bar (like site) -->
-  <rect x="0" y="0" width="1584" height="32" fill="#111111"/>
-  <circle cx="540" cy="16" r="3.5" fill="#F5B000"/>
-  <text x="556" y="21" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#AAAAAA" letter-spacing="0.5">Análise completa em menos de 60 segundos · 14 dias grátis · sem cobrança antes do 15º dia</text>
+  <rect x="0" y="384" width="1584" height="12" fill="#F5B000" opacity="0.85"/>
 </svg>

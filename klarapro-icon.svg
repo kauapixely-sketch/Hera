@@ -1,32 +1,46 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
   <defs>
-    <radialGradient id="amberGlow" cx="38%" cy="50%" r="48%">
-      <stop offset="0%" stop-color="#F5B000" stop-opacity="0.14"/>
+    <radialGradient id="glow" cx="38%" cy="50%" r="52%">
+      <stop offset="0%" stop-color="#F5B000" stop-opacity="0.13"/>
       <stop offset="100%" stop-color="#F5B000" stop-opacity="0"/>
     </radialGradient>
     <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
-      <circle cx="11" cy="11" r="0.9" fill="#1C1C1C"/>
+      <circle cx="11" cy="11" r="0.85" fill="#191919"/>
     </pattern>
-    <clipPath id="roundClip">
+    <clipPath id="clip">
       <rect width="400" height="400" rx="80"/>
     </clipPath>
   </defs>
 
-  <!-- Base background -->
   <rect width="400" height="400" rx="80" fill="#0A0A0A"/>
-  <!-- Dot grid texture -->
-  <rect width="400" height="400" clip-path="url(#roundClip)" fill="url(#dots)"/>
-  <!-- Amber radial glow -->
-  <rect width="400" height="400" clip-path="url(#roundClip)" fill="url(#amberGlow)"/>
-  <!-- Subtle border -->
-  <rect x="1" y="1" width="398" height="398" rx="79" fill="none" stroke="#222222" stroke-width="2"/>
+  <rect width="400" height="400" clip-path="url(#clip)" fill="url(#dots)"/>
+  <rect width="400" height="400" clip-path="url(#clip)" fill="url(#glow)"/>
+  <rect x="1" y="1" width="398" height="398" rx="79" fill="none" stroke="#1E1E1E" stroke-width="2"/>
 
-  <!-- K lettermark — geometrically centered in 400x400 -->
-  <!-- Visual K spans x≈64→336 (272px), y≈55→345 (290px), centered at 200,200 -->
-  <!-- Vertical bar -->
-  <rect x="64" y="68" width="54" height="264" rx="7" fill="#F5B000"/>
-  <!-- Upper arm (starts at bar center for seamless merge) -->
-  <line x1="91" y1="200" x2="314" y2="68" stroke="#F5B000" stroke-width="52" stroke-linecap="round"/>
-  <!-- Lower arm -->
-  <line x1="91" y1="200" x2="314" y2="332" stroke="#F5B000" stroke-width="52" stroke-linecap="round"/>
+  <!--
+    K lettermark — filled polygons, zero rounded caps.
+    Bar: x=72 y=52 w=48 h=296 (centered in 400×400)
+    Upper arm center line: (120,200) → (318,72)   vec=(198,-128)  |v|=235.7  u=(0.840,-0.543)  perp=(0.543,0.840)
+    Lower arm center line: (120,200) → (318,328)  vec=(198,128)   |v|=235.7  u=(0.840,0.543)   perp=(0.543,-0.840)
+    half-thickness = 24
+  -->
+
+  <!-- Upper arm parallelogram (perp = ±24*(0.543, 0.840)) -->
+  <polygon points="
+    107.0,179.8
+    304.9,53.7
+    331.0,90.4
+    133.0,220.2
+  " fill="#F5B000"/>
+
+  <!-- Lower arm parallelogram -->
+  <polygon points="
+    133.0,179.8
+    331.0,309.6
+    304.9,346.3
+    107.0,220.2
+  " fill="#F5B000"/>
+
+  <!-- Vertical bar (drawn last to cleanly cap the arm junction) -->
+  <rect x="72" y="52" width="48" height="296" rx="5" fill="#F5B000"/>
 </svg>
